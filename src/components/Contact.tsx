@@ -49,7 +49,7 @@ export default function Contact() {
               color="primary"
               size="large"
               startIcon={<LinkedInIcon />}
-              href="https://www.linkedin.com/in/trevorvandoren/"
+              href="https://www.linkedin.com/in/trevor-van-doren-3685b5ba/"
               target="_blank"
             >
               LinkedIn

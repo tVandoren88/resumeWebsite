@@ -52,7 +52,7 @@ export default function Hero() {
             jobTitle: "Senior Full-Stack & Python Software Engineer",
             url: "https://trevorvandoren.swiftwebinnov.com",
             sameAs: [
-              "https://www.linkedin.com/in/trevorvandoren/",
+              "https://www.linkedin.com/in/trevor-van-doren-3685b5ba/",
               "https://github.com/tvandoren88",
             ],
             image: `https://trevorvandoren.swiftwebinnov.com${imageUrl}`,
@@ -184,7 +184,7 @@ export default function Hero() {
                   variant="contained"
                   color="primary"
                   size="large"
-                  href="https://www.linkedin.com/in/trevorvandoren/"
+                  href="https://www.linkedin.com/in/trevor-van-doren-3685b5ba/"
                   startIcon={<LinkedInIcon />}
                   sx={{ boxShadow: "0 12px 24px rgba(201,111,18,0.25)" }}
                 >
