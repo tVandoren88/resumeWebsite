@@ -1,4 +1,3 @@
-// src/components/Contact.tsx
 import { Box, Container, Typography, Button, Paper, Stack } from "@mui/material";
 import EmailIcon from "@mui/icons-material/Email";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
@@ -26,29 +25,21 @@ export default function Contact() {
             boxShadow: "0 6px 25px rgba(0,0,0,0.15)",
           }}
         >
-          <Typography
-            variant="h4"
-            gutterBottom
-            sx={{ fontWeight: "bold", color: "primary.main" }}
-          >
+          <Typography variant="h4" gutterBottom sx={{ fontWeight: "bold", color: "primary.main" }}>
             Contact Me
           </Typography>
           <Typography variant="body1" paragraph sx={{ color: "text.secondary", mb: 3 }}>
-            I'm currently open to freelance or full-time opportunities. Let’s connect!
+            Actively seeking a senior full-stack or Python engineering role focused on distributed
+            systems, cloud-native platforms, and high-impact user experiences.
           </Typography>
 
-          <Stack
-            direction="row"
-            spacing={2}
-            justifyContent="center"
-            sx={{ flexWrap: "wrap", gap: 2 }}
-          >
+          <Stack direction="row" spacing={2} justifyContent="center" sx={{ flexWrap: "wrap", gap: 2 }}>
             <Button
               variant="contained"
               color="primary"
               size="large"
               startIcon={<EmailIcon />}
-              href="mailto:trevor.vandoren@gmail.com"
+              href="mailto:trevor.vandoren@email.com"
             >
               Email Me
             </Button>
@@ -58,7 +49,7 @@ export default function Contact() {
               color="primary"
               size="large"
               startIcon={<LinkedInIcon />}
-              href="https://www.linkedin.com/in/trevor-van-doren-3685b5ba/"
+              href="https://www.linkedin.com/in/trevorvandoren/"
               target="_blank"
             >
               LinkedIn
@@ -69,7 +60,7 @@ export default function Contact() {
               color="primary"
               size="large"
               startIcon={<GitHubIcon />}
-              href="https://github.com/tVandoren88"
+              href="https://github.com/tvandoren88"
               target="_blank"
             >
               GitHub

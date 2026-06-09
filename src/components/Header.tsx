@@ -2,14 +2,13 @@ import React, { useState, useEffect } from "react";
 import { AppBar, Toolbar, Typography, Button, Box } from "@mui/material";
 
 export default function Header() {
-  const sections = ["about", "skills", "experience", "contact"];
+  const sections = ["about", "skills", "experience", "projects", "education", "contact"];
   const [activeSection, setActiveSection] = useState<string>("about");
   const [isScrolled, setIsScrolled] = useState(false);
 
-  // Shrink header and detect active section on scroll
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 40);
 
       const scrollPosition = window.scrollY + window.innerHeight / 2;
       for (const section of sections) {
@@ -32,7 +31,7 @@ export default function Header() {
     const element = document.getElementById(id);
     if (element) {
       window.scrollTo({
-        top: element.offsetTop - 70,
+        top: element.offsetTop - 78,
         behavior: "smooth",
       });
     }
@@ -42,62 +41,57 @@ export default function Header() {
     <AppBar
       position="sticky"
       sx={{
-        bgcolor: "rgba(245,245,245,0.85)",
-        color: "#333",
-        backdropFilter: "blur(14px)",
-        boxShadow: isScrolled
-          ? "0 8px 25px rgba(0,0,0,0.15), 0 0 12px rgba(255,153,0,0.2)"
-          : "0 4px 20px rgba(0,0,0,0.08)",
-        borderBottom: "1px solid rgba(0,0,0,0.05)",
-        transition: "all 0.3s ease",
-        height: isScrolled ? 56 : 70,
+        bgcolor: isScrolled ? "rgba(255,250,244,0.8)" : "rgba(255,250,244,0.55)",
+        color: "text.primary",
+        backdropFilter: "blur(16px)",
+        boxShadow: isScrolled ? "0 14px 30px rgba(31,41,51,0.08)" : "none",
+        borderBottom: "1px solid rgba(31,41,51,0.06)",
+        transition: "all 0.25s ease",
         justifyContent: "center",
         zIndex: 1300,
       }}
     >
-      <Toolbar sx={{ minHeight: "inherit !important" }}>
+      <Toolbar
+        sx={{
+          minHeight: isScrolled ? "64px" : "78px",
+          transition: "min-height 0.25s ease",
+        }}
+      >
         <Typography
           variant="h6"
           sx={{
             flexGrow: 1,
-            fontWeight: 600,
-            transition: "all 0.3s ease",
-            fontSize: isScrolled ? "1rem" : "1.25rem",
+            fontFamily: "'Space Grotesk', sans-serif",
+            fontWeight: 700,
+            letterSpacing: "-0.03em",
           }}
         >
           Trevor Van Doren
         </Typography>
-        <Box>
+        <Box
+          sx={{
+            display: "flex",
+            gap: 1,
+            p: 0.5,
+            borderRadius: 999,
+            bgcolor: "rgba(255,255,255,0.72)",
+            border: "1px solid rgba(31,41,51,0.06)",
+            flexWrap: "wrap",
+            justifyContent: "flex-end",
+          }}
+        >
           {sections.map((item) => (
             <Button
               key={item}
               onClick={() => handleClick(item)}
               sx={{
-                color: activeSection === item ? "#ff9900" : "#333",
-                textTransform: "none",
-                fontWeight: 500,
-                mx: 1,
-                position: "relative",
-                "&::after": {
-                  content: '""',
-                  position: "absolute",
-                  bottom: 0,
-                  left: 0,
-                  width: activeSection === item ? "100%" : "0%",
-                  height: "3px",
-                  borderRadius: "2px",
-                  bgcolor: "transparent",
-                  background: activeSection === item
-                    ? "linear-gradient(90deg, #ff9900, #ffcc66)"
-                    : "transparent",
-                  transition: "width 0.3s ease, background 0.3s ease",
-                },
+                color: activeSection === item ? "secondary.main" : "text.secondary",
+                bgcolor: activeSection === item ? "rgba(201,111,18,0.14)" : "transparent",
+                px: 2,
+                minWidth: 0,
                 "&:hover": {
-                  color: "#ff9900",
-                  "&::after": {
-                    width: "100%",
-                    background: "linear-gradient(90deg, #ff9900, #ffcc66)",
-                  },
+                  bgcolor: "rgba(201,111,18,0.12)",
+                  color: "secondary.main",
                 },
               }}
             >

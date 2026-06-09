@@ -1,4 +1,3 @@
-// src/components/Experience.tsx
 import {
   Box,
   Container,
@@ -33,74 +32,79 @@ export default function Experience() {
       role: "Build Integration Engineer",
       company: "CoreAVI",
       location: "Fort Worth, TX",
-      period: "Oct 2024 – Present",
+      period: "Oct 2024 - Present",
       bullets: [
-        "Automated CI/CD pipelines and improved build performance using Python, Jenkins, and Groovy",
-        "Administered Jenkins and Codebeamer, managing complex workflows and integrations",
-        "Reduced manual input and data entry errors by implementing REST API integrations",
-        "Developed and maintained Python scripts to improve team efficiency by 30%",
+        "Developed and maintained Python automation libraries that streamlined build and verification workflows, improving team productivity by 30%+",
+        "Administered and optimized Jenkins CI/CD pipelines with reusable build scripts and parallel execution",
+        "Managed Codebeamer ALM workflows and REST API integrations to automate data sync and reduce manual operations",
+        "Used Groovy, Docker, and Kubernetes to improve build orchestration and deployment consistency",
       ],
-      skills: ["Python", "Jenkins", "Groovy", "REST APIs", "CI/CD","Artifactory", "Java"],
+      skills: ["Python", "Jenkins", "Groovy", "REST APIs", "Docker", "Kubernetes"],
     },
     {
       role: "Lead Software Engineer",
       company: "Avantax",
       location: "Coppell, TX",
-      period: "Jan 2023 – Jul 2024",
+      period: "Jan 2023 - Jul 2024",
       bullets: [
-        "Led a 3-person team, deploying web applications to 1000+ customers with frequent releases",
-        "Reduced release deployment time from 1.5 hours to under 30 minutes",
-        "Developed full-stack features using Python, Django, PostgreSQL, and Vue.js",
-        "Ensured reliability and maintainability with automated tests and REST API validation",
+        "Led a team of 3 engineers delivering a Python-based SaaS platform for 1,000+ customers",
+        "Architected backend systems with Django, Flask, and PostgreSQL to improve scalability and reliability",
+        "Built front-end components in React and Vue.js to improve usability and responsiveness",
+        "Automated releases with Jenkins, cutting deployment time by more than 60%",
+        "Designed REST APIs and owned the testing strategy with Postman",
       ],
-      skills: ["Python", "Django", "PostgreSQL", "Vue.js", "Automated Testing"],
+      skills: ["Python", "Django", "Flask", "PostgreSQL", "React", "Vue.js"],
     },
     {
       role: "Application & Firmware Engineer",
       company: "REV Robotics",
       location: "Carrollton, TX",
-      period: "Nov 2021 – Dec 2022",
+      period: "Nov 2021 - Dec 2022",
       bullets: [
-        "Developed React desktop applications and C-based firmware for robotics kits",
-        "Authored C++/Java SDKs and automated test frameworks for quality assurance",
-        "Collaborated with support to resolve customer issues and validate performance using electronic tools",
+        "Built a React desktop application for robotics configuration and diagnostics used by thousands of teams",
+        "Developed embedded firmware in C alongside tooling in Python, C++, and Java",
+        "Authored SDKs and educational APIs for student robotics programming",
+        "Created automated hardware-in-the-loop tests using Google Test",
       ],
-      skills: ["Python", "C/C++", "React", "Firmware", "SDKs"],
+      skills: ["React", "C", "C++", "Python", "Java", "Google Test"],
     },
     {
       role: "Verification Engineer",
       company: "CoreAVI",
       location: "Remote",
-      period: "May 2021 – Nov 2021",
+      period: "May 2021 - Nov 2021",
       bullets: [
-        "Built automated Python tools to accelerate internal software build cycles",
+        "Automated verification pipelines using Python, reducing manual effort and improving traceability",
+        "Executed certification test suites and produced detailed reports",
+        "Collaborated with firmware and software teams to resolve defects",
       ],
-      skills: ["Python", "Automation", "CI/CD"],
+      skills: ["Python", "Automation", "Verification", "Test Reporting"],
     },
     {
       role: "Automation Engineer",
       company: "Beyond Identity",
       location: "Remote",
-      period: "Sep 2020 – May 2021",
+      period: "Sep 2020 - May 2021",
       bullets: [
-        "Built cross-platform automation tools for Windows, macOS, and Android apps",
-        "Created Java-based test suites with Sikuli, CI/CD, and Jira integration",
+        "Automated UI and API tests for desktop and mobile apps across Windows, macOS, and Android",
+        "Integrated Java-based automation into CI/CD pipelines",
+        "Used Postman, PostgreSQL, Xray, and Jira for regression testing and defect tracking",
       ],
-      skills: ["Python", "Java", "Sikuli", "CI/CD", "Automation"],
+      skills: ["Java", "Sikuli", "Postman", "PostgreSQL", "Xray", "Jira"],
     },
     {
       role: "Application Engineer & Team Lead",
       company: "Maxim Integrated",
       location: "Farmers Branch, TX",
-      period: "May 2016 – Sep 2020",
+      period: "May 2016 - Sep 2020",
       bullets: [
-        "Designed and maintained SDKs used by external customers to drive multi-million-dollar chip sales",
-        "Reduced SDK release time by 70% with Jenkins-based automation",
-        "Built cross-platform installers using QT for Windows, macOS, and Linux",
-        "Led a 3-person team in codebase redesign for modular and scalable architecture",
-        "Created Eclipse plugin for seamless project setup by customers",
+        "Designed and developed a multi-platform Python SDK used by enterprise semiconductor customers",
+        "Automated build and release pipelines with Python and Jenkins, reducing release time by 70%",
+        "Maintained Qt Installer Framework builds for Windows, macOS, and Linux",
+        "Created an Eclipse IDE plugin to simplify project setup and customer onboarding",
+        "Led a 3-engineer team through a major architecture refactor that improved code reusability",
       ],
-      skills: ["Python", "Jenkins", "QT", "SDKs", "Team Leadership", "C", "make"],
+      skills: ["Python", "Jenkins", "Qt Installer Framework", "SDK Development", "Leadership"],
     },
   ];
 
@@ -113,11 +117,7 @@ export default function Experience() {
   return (
     <Box id="experience" sx={{ py: 8, bgcolor: "background.default" }}>
       <Container>
-        <Typography
-          variant="h4"
-          gutterBottom
-          sx={{ fontWeight: "bold", color: "primary.main", mb: 4 }}
-        >
+        <Typography variant="h4" gutterBottom sx={{ fontWeight: "bold", color: "primary.main", mb: 4 }}>
           Experience
         </Typography>
         <Timeline position="alternate">
@@ -151,11 +151,8 @@ export default function Experience() {
                         <Typography variant="h6" sx={{ fontWeight: "bold" }}>
                           {job.role} @ {job.company}
                         </Typography>
-                        <Typography
-                          variant="body2"
-                          sx={{ color: "text.secondary" }}
-                        >
-                          {job.location} • {job.period}
+                        <Typography variant="body2" sx={{ color: "text.secondary" }}>
+                          {job.location} | {job.period}
                         </Typography>
                       </Box>
                       <IconButton size="small">
@@ -163,7 +160,6 @@ export default function Experience() {
                       </IconButton>
                     </Box>
 
-                    {/* Always-visible skills */}
                     <Stack direction="row" spacing={1} flexWrap="wrap" sx={{ mt: 2, mb: 2 }}>
                       {job.skills.map((skill) => (
                         <Chip
@@ -186,12 +182,11 @@ export default function Experience() {
                       ))}
                     </Stack>
 
-                    {/* Collapsible bullets */}
                     <Collapse in={openIndex === index} timeout="auto" unmountOnExit>
                       <List dense sx={{ mt: 1, mb: 1 }}>
                         {job.bullets.map((bullet, i) => (
                           <ListItem key={i} sx={{ pl: 0 }}>
-                            <ListItemIcon sx={{ minWidth: 28, color: "primary.main" }}>•</ListItemIcon>
+                            <ListItemIcon sx={{ minWidth: 28, color: "primary.main" }}>-</ListItemIcon>
                             <ListItemText primary={bullet} />
                           </ListItem>
                         ))}

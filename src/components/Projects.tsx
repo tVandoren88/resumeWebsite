@@ -1,4 +1,3 @@
-// src/components/Projects.tsx
 import {
   Box,
   Container,
@@ -15,36 +14,29 @@ import LaunchIcon from "@mui/icons-material/Launch";
 
 const projects = [
   {
+    title: "ParcelScout.io",
+    summary: "Featured product work",
+    description:
+      "A production web project presented as part of this portfolio to highlight end-to-end delivery, product ownership, and modern web implementation.",
+    tech: ["Web Product", "React", "TypeScript", "Product Delivery"],
+    github: "",
+    demo: "https://parcelscout.io",
+  },
+  {
     title: "Inventory Management SaaS",
-    description: (
-      <>
-        <Typography variant="body2" sx={{ mb: 1, color: "text.secondary" }}>
-          A full-stack SaaS app for <strong>repair shops</strong> with{" "}
-          <strong>customer management</strong>, <strong>inventory</strong>, and{" "}
-          <strong>shipping integrations</strong>.
-        </Typography>
-        <Typography
-          variant="body2"
-          sx={{ fontWeight: "bold", color: "primary.main" }}
-        >
-          Demo Login → User: t.vandoren88@gmail.com | Password: testing
-        </Typography>
-      </>
-    ),
+    summary: "Full-stack business application",
+    description:
+      "A SaaS application for repair shops with customer management, inventory workflows, and shipping-related operations.",
     tech: ["React", "TypeScript", "Supabase", "Electron", "MUI"],
     github: "https://github.com/tVandoren88/inventoryManagementProject",
     demo: "https://inventoryproject.swiftwebinnov.com/",
   },
   {
     title: "Personal Portfolio",
-    description: (
-      <>
-        My <strong>personal portfolio</strong> showcasing{" "}
-        <strong>skills, resume, and projects</strong> built with{" "}
-        <strong>React + Vite</strong>.
-      </>
-    ),
-    tech: ["React", "Vite", "MUI", "Tailwind"],
+    summary: "Senior engineer portfolio site",
+    description:
+      "A portfolio built with React and Vite to showcase experience, technical breadth, and selected engineering projects.",
+    tech: ["React", "Vite", "MUI"],
     github: "https://github.com/tVandoren88/portfolioWebsite",
     demo: "https://trevorvandoren.swiftwebinnov.com",
   },
@@ -63,46 +55,57 @@ export default function Projects() {
             display: "flex",
             alignItems: "center",
             gap: 1,
-            mb: 4,
+            mb: 1,
           }}
         >
           <CodeIcon fontSize="large" /> Projects
         </Typography>
+        <Typography variant="body1" sx={{ color: "text.secondary", maxWidth: 760, mb: 4 }}>
+          A few projects that reflect how I approach product delivery, front-end execution, and
+          maintainable engineering systems.
+        </Typography>
 
         <Stack spacing={3}>
-          {projects.map((project) => (
+          {projects.map((project, index) => (
             <Paper
               key={project.title}
-              elevation={3}
+              elevation={0}
               sx={{
-                p: 3,
-                borderRadius: 3,
+                p: { xs: 3, md: 4 },
+                borderRadius: 4,
                 bgcolor: "background.paper",
+                border: "1px solid rgba(31,41,51,0.06)",
+                boxShadow: index === 0 ? "0 24px 50px rgba(31,41,51,0.10)" : "0 14px 30px rgba(31,41,51,0.06)",
               }}
             >
-              <Typography variant="h6" sx={{ fontWeight: "bold", mb: 1 }}>
+              <Typography sx={{ color: "primary.main", fontWeight: 800, mb: 0.75 }}>
+                {project.summary}
+              </Typography>
+              <Typography variant="h5" sx={{ fontWeight: "bold", mb: 1 }}>
                 {project.title}
               </Typography>
-              <Typography variant="body2" sx={{ mb: 2, color: "text.secondary" }}>
+              <Typography variant="body1" sx={{ mb: 2.5, color: "text.secondary", maxWidth: 760 }}>
                 {project.description}
               </Typography>
 
-              <Stack direction="row" spacing={1} sx={{ mb: 2, flexWrap: "wrap" }}>
+              <Stack direction="row" spacing={1} sx={{ mb: 2.5, flexWrap: "wrap" }}>
                 {project.tech.map((t) => (
                   <Chip key={t} label={t} size="small" color="primary" variant="outlined" />
                 ))}
               </Stack>
 
               <Stack direction="row" spacing={2}>
-                <IconButton
-                  component={Link}
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener"
-                  color="inherit"
-                >
-                  <GitHubIcon />
-                </IconButton>
+                {project.github ? (
+                  <IconButton
+                    component={Link}
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener"
+                    color="inherit"
+                  >
+                    <GitHubIcon />
+                  </IconButton>
+                ) : null}
                 <IconButton
                   component={Link}
                   href={project.demo}

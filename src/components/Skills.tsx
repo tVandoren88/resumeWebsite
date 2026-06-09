@@ -1,4 +1,3 @@
-// src/components/Skills.tsx
 import {
   Box,
   Container,
@@ -17,67 +16,73 @@ type Skill = { name: string; strength: number };
 
 const skillCategories: Record<string, Skill[]> = {
   Languages: [
-    { name: "C", strength: 3 },
-    { name: "C#", strength: 2 },
-    { name: "Java", strength: 2 },
     { name: "Python", strength: 5 },
-    { name: "HTML", strength: 5 },
-    { name: "CSS", strength: 4 },
-    { name: "JavaScript", strength: 5 },
+    { name: "JavaScript", strength: 4 },
     { name: "TypeScript", strength: 4 },
-    { name: "SQL", strength: 3 },
+    { name: "C/C++", strength: 4 },
+    { name: "Java", strength: 3 },
+    { name: "C#", strength: 2 },
+    { name: "HTML5", strength: 4 },
+    { name: "CSS3", strength: 4 },
+    { name: "SQL", strength: 4 },
     { name: "XML", strength: 5 },
-    { name: "Bash", strength: 5 },
+    { name: "Bash", strength: 4 },
   ],
   Frameworks: [
-    { name: "React", strength: 3 },
-    { name: "Vue.js", strength: 2 },
-    { name: "Django", strength: 3 },
-    { name: "QT", strength: 2 },
+    { name: "Django", strength: 5 },
+    { name: "Flask", strength: 4 },
+    { name: "FastAPI", strength: 3 },
+    { name: "React", strength: 4 },
+    { name: "Vue.js", strength: 3 },
+    { name: "Bootstrap", strength: 3 },
+    { name: "Qt Installer Framework", strength: 4 },
     { name: "MUI", strength: 4 },
   ],
   Tools: [
     { name: "Git", strength: 5 },
-    { name: "Subversion", strength: 5 },
     { name: "Jira", strength: 4 },
-    { name: "Xray", strength: 1 },
+    { name: "Xray", strength: 3 },
     { name: "Postman", strength: 5 },
     { name: "Swagger", strength: 5 },
     { name: "Codebeamer ALM", strength: 5 },
+    { name: "Postgres CLI", strength: 3 },
   ],
   DevOps: [
-    { name: "Docker", strength: 3 },
+    { name: "AWS", strength: 4 },
+    { name: "Docker", strength: 4 },
+    { name: "Kubernetes", strength: 3 },
     { name: "Jenkins", strength: 5 },
-    { name: "CI/CD pipelines", strength: 4 },
-    { name: "AWS", strength: 3 },
-    { name: "Artifactory", strength: 3 },
+    { name: "GitHub Actions", strength: 4 },
+    { name: "CI/CD pipelines", strength: 5 },
   ],
   Testing: [
-    { name: "Selenium", strength: 2 },
-    { name: "Google Test", strength: 2 },
-    { name: "Automated Testing", strength: 3 },
+    { name: "Selenium", strength: 3 },
+    { name: "Sikuli", strength: 3 },
+    { name: "Google Test", strength: 3 },
+    { name: "Automated Testing", strength: 4 },
   ],
   Concepts: [
     { name: "REST APIs", strength: 5 },
     { name: "SDK Development", strength: 5 },
     { name: "System Architecture", strength: 4 },
-    { name: "Build Automation", strength: 4 },
-    { name: "Firmware Debugging", strength: 3 },
-    { name: "Robotics", strength: 3 },
+    { name: "Build Automation", strength: 5 },
+    { name: "Developer Tooling", strength: 5 },
+    { name: "Firmware Tooling", strength: 4 },
+    { name: "Robotics Applications", strength: 4 },
     { name: "Agile/Scrum", strength: 5 },
   ],
   Databases: [
-    { name: "PostgreSQL", strength: 4 },
+    { name: "PostgreSQL", strength: 5 },
     { name: "MySQL", strength: 4 },
-    { name: "Supabase", strength: 3 },
+    { name: "Redis", strength: 2 },
   ],
   "Soft Skills": [
-    { name: "Leadership", strength: 4 },
-    { name: "Mentorship", strength: 4 },
+    { name: "Leadership", strength: 5 },
+    { name: "Mentorship", strength: 5 },
     { name: "Teamwork", strength: 5 },
     { name: "Problem Solving", strength: 5 },
-    { name: "User-Centric Thinking", strength: 5 },
-    { name: "Growth Mindset", strength: 5 },
+    { name: "Developer Productivity", strength: 5 },
+    { name: "User-Centric Thinking", strength: 4 },
   ],
 };
 
@@ -115,7 +120,6 @@ export default function Skills() {
             bgcolor: "background.paper",
           }}
         >
-          {/* Tabs */}
           <Tabs
             value={currentTab}
             onChange={handleChange}
@@ -126,14 +130,10 @@ export default function Skills() {
             indicatorColor="primary"
           >
             {categories.map((category) => (
-              <Tab
-                key={category}
-                label={`${category} (${skillCategories[category].length})`}
-              />
+              <Tab key={category} label={`${category} (${skillCategories[category].length})`} />
             ))}
           </Tabs>
 
-          {/* Skills Grid */}
           <Grid container spacing={2}>
             {skillCategories[categories[currentTab]]
               .sort((a, b) => b.strength - a.strength)
@@ -155,19 +155,14 @@ export default function Skills() {
                       },
                     }}
                   >
-                    <Typography sx={{ fontWeight: 500 }}>
-                      {skill.name}
-                    </Typography>
+                    <Typography sx={{ fontWeight: 500 }}>{skill.name}</Typography>
                     <Box>
                       {Array.from({ length: 5 }).map((_, i) => (
                         <StarIcon
                           key={i}
                           sx={{
                             fontSize: 20,
-                            color:
-                              i < skill.strength
-                                ? "primary.main"
-                                : "action.disabled",
+                            color: i < skill.strength ? "primary.main" : "action.disabled",
                           }}
                         />
                       ))}
@@ -177,27 +172,16 @@ export default function Skills() {
               ))}
           </Grid>
 
-          {/* Legend / Key */}
           <Box sx={{ mt: 4 }}>
             <Typography variant="subtitle1" sx={{ fontWeight: "bold", mb: 1 }}>
               Star Rating Key:
             </Typography>
             <Stack spacing={0.5}>
-              <Typography variant="body2">
-                ⭐⭐⭐⭐⭐ – Expert / Highly Proficient
-              </Typography>
-              <Typography variant="body2">
-                ⭐⭐⭐⭐ – Strong / Advanced
-              </Typography>
-              <Typography variant="body2">
-                ⭐⭐⭐ – Intermediate
-              </Typography>
-              <Typography variant="body2">
-                ⭐⭐ – Beginner
-              </Typography>
-              <Typography variant="body2">
-                ⭐ – Basic Exposure
-              </Typography>
+              <Typography variant="body2">5/5 - Expert / Highly Proficient</Typography>
+              <Typography variant="body2">4/5 - Strong / Advanced</Typography>
+              <Typography variant="body2">3/5 - Intermediate</Typography>
+              <Typography variant="body2">2/5 - Beginner</Typography>
+              <Typography variant="body2">1/5 - Basic Exposure</Typography>
             </Stack>
           </Box>
         </Paper>
