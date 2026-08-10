@@ -19,7 +19,7 @@ const projects = [
     description:
       "An active package-tracking application that highlights end-to-end delivery, product ownership, and modern web implementation.",
     tech: ["Package Tracking", "React", "TypeScript", "Product Delivery"],
-    github: "",
+    github: "https://github.com/tVandoren88/tracking_App",
     demo: "https://trackingapp.tvandoren.dev",
   },
   // {
