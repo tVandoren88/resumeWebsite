@@ -15,22 +15,22 @@ import LaunchIcon from "@mui/icons-material/Launch";
 const projects = [
   {
     title: "Package Tracking App",
-    summary: "Featured application",
+    summary: "Full-stack business application",
     description:
       "An active package-tracking application that highlights end-to-end delivery, product ownership, and modern web implementation.",
     tech: ["Package Tracking", "React", "TypeScript", "Product Delivery"],
     github: "",
     demo: "https://trackingapp.tvandoren.dev",
   },
-  {
-    title: "Inventory Management SaaS",
-    summary: "Full-stack business application",
-    description:
-      "A SaaS application for repair shops with customer management, inventory workflows, and shipping-related operations.",
-    tech: ["React", "TypeScript", "Supabase", "Electron", "MUI"],
-    github: "https://github.com/tVandoren88/inventoryManagementProject",
-    demo: "https://inventoryproject.swiftwebinnov.com/",
-  },
+  // {
+  //   title: "Inventory Management SaaS",
+  //   summary: "Full-stack business application",
+  //   description:
+  //     "A SaaS application for repair shops with customer management, inventory workflows, and shipping-related operations.",
+  //   tech: ["React", "TypeScript", "Supabase", "Electron", "MUI"],
+  //   github: "https://github.com/tVandoren88/inventoryManagementProject",
+  //   demo: "https://inventoryproject.swiftwebinnov.com/",
+  // },
   {
     title: "Personal Portfolio",
     summary: "Senior engineer portfolio site",
