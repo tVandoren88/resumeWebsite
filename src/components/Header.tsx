@@ -1,10 +1,23 @@
 import React, { useState, useEffect } from "react";
-import { AppBar, Toolbar, Typography, Button, Box } from "@mui/material";
+import {
+  AppBar,
+  Toolbar,
+  Typography,
+  Button,
+  Box,
+  Drawer,
+  IconButton,
+  List,
+  ListItemButton,
+  ListItemText,
+} from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
 
 export default function Header() {
   const sections = ["about", "skills", "experience", "projects", "education", "contact"];
   const [activeSection, setActiveSection] = useState<string>("about");
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,6 +41,7 @@ export default function Header() {
   }, []);
 
   const handleClick = (id: string) => {
+    setIsMenuOpen(false);
     const element = document.getElementById(id);
     if (element) {
       window.scrollTo({
@@ -70,7 +84,7 @@ export default function Header() {
         </Typography>
         <Box
           sx={{
-            display: "flex",
+            display: { xs: "none", md: "flex" },
             gap: 1,
             p: 0.5,
             borderRadius: 999,
@@ -99,6 +113,37 @@ export default function Header() {
             </Button>
           ))}
         </Box>
+        <IconButton
+          aria-label="Open navigation menu"
+          aria-expanded={isMenuOpen}
+          onClick={() => setIsMenuOpen(true)}
+          sx={{ display: { xs: "inline-flex", md: "none" }, color: "secondary.main" }}
+        >
+          <MenuIcon />
+        </IconButton>
+        <Drawer
+          anchor="right"
+          open={isMenuOpen}
+          onClose={() => setIsMenuOpen(false)}
+          PaperProps={{ sx: { width: 280, pt: 2 } }}
+        >
+          <Box component="nav" aria-label="Mobile navigation">
+            <Typography variant="h6" sx={{ px: 3, pb: 1, color: "secondary.main" }}>
+              Navigate
+            </Typography>
+            <List>
+              {sections.map((item) => (
+                <ListItemButton
+                  key={item}
+                  selected={activeSection === item}
+                  onClick={() => handleClick(item)}
+                >
+                  <ListItemText primary={item.charAt(0).toUpperCase() + item.slice(1)} />
+                </ListItemButton>
+              ))}
+            </List>
+          </Box>
+        </Drawer>
       </Toolbar>
     </AppBar>
   );
