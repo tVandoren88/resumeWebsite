@@ -60,15 +60,7 @@ export default function Hero() {
         </script>
       </Helmet>
 
-      <Container
-        maxWidth={false}
-        sx={{
-          position: "relative",
-          zIndex: 1,
-          width: { xs: "100%", md: "75vw" },
-          maxWidth: "none",
-        }}
-      >
+      <Container sx={{ position: "relative", zIndex: 1 }}>
         <Paper
           elevation={0}
           sx={{
