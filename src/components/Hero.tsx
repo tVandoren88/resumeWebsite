@@ -157,20 +157,20 @@ export default function Hero() {
                   Featured Project
                 </Typography>
                 <Typography variant="h6" sx={{ mb: 0.75 }}>
-                  ParcelScout.io
+                  Package Tracking App
                 </Typography>
                 <Typography variant="body2" sx={{ color: "text.secondary", mb: 1.5 }}>
-                  A production web project highlighted here as part of my senior-engineer portfolio,
-                  showing product thinking, modern front-end execution, and end-to-end delivery.
+                  An active package-tracking application showcasing product thinking, modern
+                  front-end execution, and end-to-end delivery.
                 </Typography>
                 <Button
                   variant="outlined"
                   color="secondary"
                   size="small"
-                  href="https://parcelscout.io"
+                  href="https://trackingapp.tvandoren.dev"
                   startIcon={<LaunchIcon />}
                 >
-                  View ParcelScout.io
+                  View Package Tracking App
                 </Button>
               </Paper>
 

@@ -14,13 +14,13 @@ import LaunchIcon from "@mui/icons-material/Launch";
 
 const projects = [
   {
-    title: "ParcelScout.io",
-    summary: "Featured product work",
+    title: "Package Tracking App",
+    summary: "Featured application",
     description:
-      "A production web project presented as part of this portfolio to highlight end-to-end delivery, product ownership, and modern web implementation.",
-    tech: ["Web Product", "React", "TypeScript", "Product Delivery"],
+      "An active package-tracking application that highlights end-to-end delivery, product ownership, and modern web implementation.",
+    tech: ["Package Tracking", "React", "TypeScript", "Product Delivery"],
     github: "",
-    demo: "https://parcelscout.io",
+    demo: "https://trackingapp.tvandoren.dev",
   },
   {
     title: "Inventory Management SaaS",
@@ -38,7 +38,7 @@ const projects = [
       "A portfolio built with React and Vite to showcase experience, technical breadth, and selected engineering projects.",
     tech: ["React", "Vite", "MUI"],
     github: "https://github.com/tVandoren88/portfolioWebsite",
-    demo: "https://trevorvandoren.swiftwebinnov.com",
+    demo: "https://tvandoren.dev",
   },
 ];
 
