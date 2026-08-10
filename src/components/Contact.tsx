@@ -13,7 +13,7 @@ export default function Contact() {
         justifyContent: "center",
       }}
     >
-      <Container maxWidth="sm">
+      <Container>
         <Paper
           elevation={4}
           sx={{

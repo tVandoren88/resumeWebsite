@@ -70,6 +70,20 @@ const theme = createTheme({
         },
       },
     },
+    MuiContainer: {
+      defaultProps: {
+        maxWidth: false,
+      },
+      styleOverrides: {
+        root: {
+          width: "100%",
+          maxWidth: "none",
+          "@media (min-width:900px)": {
+            width: "75vw",
+          },
+        },
+      },
+    },
   },
 });
 
