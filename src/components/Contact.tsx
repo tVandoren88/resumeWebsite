@@ -39,7 +39,7 @@ export default function Contact() {
               color="primary"
               size="large"
               startIcon={<EmailIcon />}
-              href="mailto:trevor.vandoren@email.com"
+              href="mailto:trevor.vandoren@gmail.com?subject=Portfolio%20website%20inquiry"
             >
               Email Me
             </Button>
