@@ -199,14 +199,6 @@ export default function Hero() {
                 >
                   GitHub
                 </Button>
-                <Button
-                  variant="text"
-                  color="secondary"
-                  size="large"
-                  href="mailto:trevor.vandoren@gmail.com?subject=Portfolio%20website%20inquiry"
-                >
-                  Email Me
-                </Button>
               </Stack>
 
               <Box

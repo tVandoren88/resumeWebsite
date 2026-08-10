@@ -1,5 +1,4 @@
 import { Box, Container, Typography, Button, Paper, Stack } from "@mui/material";
-import EmailIcon from "@mui/icons-material/Email";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 
@@ -34,16 +33,6 @@ export default function Contact() {
           </Typography>
 
           <Stack direction="row" spacing={2} justifyContent="center" sx={{ flexWrap: "wrap", gap: 2 }}>
-            <Button
-              variant="contained"
-              color="primary"
-              size="large"
-              startIcon={<EmailIcon />}
-              href="mailto:trevor.vandoren@gmail.com?subject=Portfolio%20website%20inquiry"
-            >
-              Email Me
-            </Button>
-
             <Button
               variant="outlined"
               color="primary"
